@@ -1,0 +1,37 @@
+@startuml
+
+!pragma layout smetana
+
+class Biblioteca{
+- ArrayList Libro
+-ArrayList Socio
++ void librosDisponibles (){}
+
+}
+
+class Socio{
+string Nombre
+}
+abstract class Libro{
+- int ISBN
+- int cantCapitulos
+- enum Disponible
+- date fechaPrestado
+- Socio socio
+
++ void quienLoTiene(){}
++ void tiempoPrestamoTotal(){}
++ void tiempoPrestamoRestante(){}
+}
+class Matematica extends Libro{
+- final static cantSemanasPrestamo
+}
+class Informatica extends Libro
+class Filosofia extends Libro
+class Derecho extends Libro
+class Economia extends Libro
+
+Biblioteca *-- Libro
+Biblioteca *-- Socio
+
+@enduml
